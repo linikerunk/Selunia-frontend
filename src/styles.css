@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, ::before, ::after { @apply box-border; }
+  html, body, #root { @apply h-full; }
+  body { @apply m-0 font-sans text-ink bg-[#fffafa]; }
+}
+
+@layer components {
+  .container { @apply max-w-container mx-auto px-4; }
+  .app-container { @apply min-h-screen flex flex-col; }
+  .main-content { @apply flex-1; }
+
+  .header { @apply sticky top-0 z-20 bg-white border-b border-gray-200; }
+  .header-inner { @apply max-w-container mx-auto px-4 flex items-center justify-between h-16; }
+  .logo { @apply font-extrabold text-xl text-ink no-underline; }
+  .nav { @apply flex gap-4; }
+  .nav a { @apply text-ink-600 no-underline px-2.5 py-2 rounded-lg hover:bg-rose-100 transition-colors; }
+  .nav a.active { @apply bg-rose-300 text-ink; }
+  .cart-link { @apply inline-flex items-center gap-2 no-underline text-ink; }
+  .cart-badge { @apply inline-grid place-items-center min-w-[22px] h-[22px] px-1.5 bg-ink text-white rounded-full text-xs; }
+
+  .footer { @apply mt-12 py-8 border-t border-gray-200 bg-white; }
+  .footer-inner { @apply max-w-container mx-auto px-4 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-4; }
+  .footer-brand { @apply font-semibold; }
+  .newsletter { @apply flex items-center gap-2; }
+  .newsletter .input { @apply px-3 py-2 rounded-lg border border-gray-200; }
+  .footer-nav { @apply flex gap-3; }
+  .footer-nav a { @apply no-underline text-ink-600; }
+  .footer-copy { @apply text-ink-600 md:text-right text-left; }
+
+  .hero { @apply bg-gradient-to-b from-rose-300 to-transparent; }
+  .hero-inner { @apply max-w-container mx-auto px-4 py-12 text-center; }
+  .hero h1 { @apply m-0 mb-2 text-4xl font-display; }
+  .hero p { @apply m-0 mb-4 text-ink-600; }
+  .btn { @apply inline-block bg-ink text-white rounded-xl px-4 py-2 cursor-pointer no-underline; }
+  .btn-secondary { @apply bg-white text-ink border border-gray-200; }
+
+  .category-grid { @apply grid grid-cols-1 md:grid-cols-3 gap-4; }
+  .category-card { @apply relative rounded-xl overflow-hidden no-underline text-white; }
+  .category-card img { @apply w-full h-40 object-cover block saturate-90; }
+  .category-card span { @apply absolute left-3 bottom-3 bg-black/50 px-2.5 py-1.5 rounded-lg; }
+
+  .cards-grid { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5; }
+
+  .product-card { @apply bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow; }
+  .product-card-thumb img { @apply w-full h-56 object-cover block; }
+  .product-card-info { @apply p-3; }
+  .product-card-title { @apply m-0 mb-2 text-base; }
+  .product-card-meta { @apply flex items-center gap-2; }
+  .product-price { @apply font-bold; }
+  .product-old-price { @apply line-through text-ink-600 text-sm; }
+
+  .product-page { @apply grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6; }
+  .product-gallery img { @apply w-full rounded-xl; }
+  .thumbs { @apply mt-2 grid grid-cols-4 gap-1.5; }
+  .thumbs img { @apply w-full h-20 object-cover rounded-lg; }
+  .product-details h1 { @apply m-0 mb-2; }
+  .product-desc { @apply text-ink-600; }
+  .buy { @apply flex items-center gap-3 mt-4; }
+  .buy input { @apply w-[72px] px-3 py-2 rounded-lg border border-gray-300; }
+  .buy-actions { @apply mt-3 flex gap-3; }
+
+  .cart-table { @apply w-full border-collapse mt-3 bg-white border border-gray-200 rounded-xl overflow-hidden; }
+  .cart-table th, .cart-table td { @apply p-3 border-b border-gray-200 text-left; }
+  .cart-product { @apply flex items-center gap-3; }
+  .cart-product img { @apply w-16 h-16 object-cover rounded-lg; }
+  .link { @apply bg-transparent border-0 text-rose-500 cursor-pointer; }
+  .cart-summary { @apply flex justify-end gap-6 my-4; }
+  .cart-actions { @apply flex justify-end gap-3; }
+}
+
+@layer utilities {
+  .saturate-90 { filter: saturate(.9); }
+}
+
+/* Product page refinements */
+@layer components {
+  .breadcrumbs { @apply text-sm text-ink-600 flex gap-2; }
+  .rating { @apply flex items-center gap-2 text-sm text-ink-600; }
+  .price-box { @apply mt-2 flex items-baseline gap-3; }
+  .installment { @apply text-sm text-ink-600; }
+  .badge { @apply inline-block text-xs bg-rose-300 text-ink px-2 py-1 rounded-md; }
+  .benefits { @apply mt-3 flex flex-wrap gap-3 text-sm text-ink-600; }
+  .related { @apply mt-10; }
+  .sticky-cta { @apply fixed left-0 right-0 bottom-0 border-t border-gray-200 bg-white/90 backdrop-blur; }
+  .sticky-cta-inner { @apply max-w-container mx-auto px-4 py-3 flex items-center justify-between gap-4; }
+  .sticky-cta-price { @apply font-bold text-lg; }
+}

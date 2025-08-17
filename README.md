@@ -1,43 +1,26 @@
-# Selunia – Beleza, Estilo e Exclusividade ao Seu Alcance
+# Selúnia Frontend (MVP)
 
-Bem-vindo ao Selunia, a plataforma oficial de vendas de cosméticos, roupas e semijoias da Dra. Ivanete Simões de Oliveira. Aqui, você encontra produtos selecionados com rigor, atendimento personalizado e uma experiência de compra única, pensada para valorizar sua beleza e autoestima.
+MVP de loja virtual feminina com categorias de semi joias, roupas e cosméticos. Inclui header, footer, home, listagem por categoria, página de produto e carrinho com store global.
 
-## Por que escolher o Selunia?
+- React + TypeScript + Vite
+- Roteamento com React Router
+- Estado de carrinho com Zustand
+- Mocks tipados com adapter `src/services/api.ts` pronto para troca por backend
 
-- **Curadoria Especializada:** Todos os produtos são escolhidos pessoalmente pela Dra. Ivanete, referência em qualidade e bom gosto.
-- **Atendimento Humanizado:** Nossa equipe está pronta para entender suas necessidades e indicar as melhores opções para você.
-- **Variedade e Exclusividade:** Cosméticos, roupas e semijoias que acompanham as tendências e respeitam sua individualidade.
-- **Facilidade e Segurança:** Plataforma intuitiva, com processos de compra e acompanhamento simples e seguros.
+## Scripts
 
-## Como funciona?
+- `npm run dev` — ambiente de desenvolvimento
+- `npm run build` — build de produção
+- `npm run preview` — preview local do build
 
-1. **Explore o Catálogo:** Descubra novidades e promoções em cosméticos, roupas e semijoias.
-2. **Cadastre-se como Lead:** Preencha seus dados e receba ofertas exclusivas, dicas de beleza e atendimento personalizado.
-3. **Compre com Facilidade:** Escolha seus produtos favoritos e finalize sua compra de forma rápida e segura.
-4. **Acompanhe e Compartilhe:** Receba seu pedido em casa e compartilhe sua experiência com a gente!
+## Estrutura
 
-## Seja um Lead Selunia
+- `src/pages` — páginas: Home, Categoria, Produto, Carrinho
+- `src/components` — Header, Footer, ProductCard
+- `src/store` — `cartStore` (Zustand)
+- `src/mocks` — dados de exemplo (produtos e categorias)
+- `src/services/api.ts` — camada para futura integração com backend
 
-Quer receber ofertas especiais, novidades e atendimento VIP? Cadastre-se em nossa base de leads e faça parte do universo Selunia!
+## Integração com backend
 
-**Exemplo de cadastro:**
-
-```csv
-Nome,E-mail,Telefone,Produto de Interesse,Status do Contato
-Maria Silva,maria@email.com,11999999999,Cosméticos,Contato Inicial
-João Souza,joao@email.com,11988888888,Roupas,Em negociação
-```
-
-Entre em contato e descubra como podemos transformar sua experiência de compra!
-
----
-
-## Sobre a Dra. Ivanete Simões de Oliveira
-
-Com anos de experiência e paixão pelo universo da beleza, a Dra. Ivanete é reconhecida por seu atendimento diferenciado e pela seleção criteriosa de produtos. Seu compromisso é oferecer sempre o melhor para você.
-
----
-
-Siga-nos, compartilhe e faça parte dessa comunidade que valoriza beleza, autoestima e exclusividade.
-# Selunia-frontend
-
+Substituir chamadas no `api` por `fetch('/api/...')` ou cliente HTTP. O shape dos dados está descrito em `src/types/product.ts`.
